@@ -1,0 +1,51 @@
+# Dependency directories
+node_modules/
+
+# Optional: Logs and runtime data
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional: OS generated files
+.DS_Store
+Thumbs.db
+
+# Optional: Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Optional: Testing directories
+__tests__/
+test/
+
+# Optional: Build directories
+dist/
+out/
+
+# Optional: Configuration files
+.env
+.env.local
+.env.*.local
+
+# Optional: Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional: Yarn integrity file
+.yarn-integrity
+
+# Optional: dotenv environment variable files
+.env.test
+.env.production
+
+# Optional: Node.js generated files
+node_modules/

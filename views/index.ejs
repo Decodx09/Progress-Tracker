@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commit History</title>
+</head>
+<body>
+    <div id="commit-history"></div>
+
+    <style>
+        .main{
+            display : flex;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightcyan;
+        }
+
+        .one{ 
+            height : 200px;
+            margin-top : 10px;
+            margin-left : 20px;
+        }
+    </style>
+
+    <script>
+        async function fetchData() {
+            try {
+                const response = await fetch('http://localhost:3000/api/commit-history');
+                const data = await response.json();
+
+                displayData(data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        function displayData(data) {
+            const commitHistoryContainer = document.getElementById('commit-history');
+
+            data.forEach(commit => {
+                const commitElement = document.createElement('div');
+                commitElement.innerHTML = 
+                `
+                <div class="main">
+                    <div class="one">
+                        <p>SHA : ${commit.sha}</p>
+                        <p>Author : ${commit.author}</p>
+                        <p>Date : ${commit.date}</p>
+                        <p>Message : ${commit.message}</p>
+                    </div>
+                </div>
+                `;
+                commitHistoryContainer.appendChild(commitElement);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
+</body>
+</html>

@@ -7,7 +7,7 @@ const port = 3000;
 
 const username = 'hpcaitech';
 const repoName = 'Open-Sora';
-const token = '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';
+const token = '';
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
